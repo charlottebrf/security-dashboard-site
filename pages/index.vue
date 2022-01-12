@@ -1,12 +1,18 @@
-<template>
-<p>HERE I AM</p>
-</template>
-
 <script>
-import Vue from 'vue'
-const app = Vue.createApp({})
-app.component('home', {
-
-})
+export default {
+  data() {
+    return {
+      articles: {id: 1, content: 'abccddefer'}
+    }
+  }
+}
 
 </script>
+
+<template>
+<div>
+<p>HERE I AM</p>
+<p>Here is the response {{ articles.id }}</p>
+</div>
+</template>
+
