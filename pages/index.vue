@@ -1,18 +1,12 @@
-<script>
-export default {
-  data() {
-    return {
-      articles: {id: 1, content: 'abccddefer'}
-    }
-  }
-}
-
+<script setup>
+const { data } = useFetch('https://dev.to/api/articles?per_page=5&tag=security', {
+    headers: useRequestHeaders(['cookie'])
+})
 </script>
 
 <template>
 <div>
-<p>HERE I AM</p>
-<p>Here is the response {{ articles.id }}</p>
+<p>Here is the response from devTo: {{ data }}</p>
 </div>
 </template>
 
