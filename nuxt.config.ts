@@ -6,6 +6,11 @@ export default defineNuxtConfig({
         "basePath": "/",
         "assetsPath": "/_nuxt/",
         "cdnURL": null
+      },
+      vue: {
+        config: {
+          productionTip: false,
+          devtools: true
+        }
       }
-
 })
