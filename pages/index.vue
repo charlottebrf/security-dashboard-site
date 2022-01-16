@@ -1,4 +1,5 @@
 <script>
+import Card from '../components/Card.vue'
 export default defineComponent({
   async setup() {
     const [{ data: devTo}, { data: snyk }] = await Promise.all([
@@ -15,10 +16,11 @@ export default defineComponent({
 
 <template>
 <div>
-<p>Here is the response from devTo: {{ devTo }}</p>
+<Card/>
+<p><b>Here is the response from devTo:</b> {{ devTo }}</p>
 <br>
 <p> ************************************************</p>
-<p>Here is the response from Snyk Vulns: {{ snyk }} </p>
+<p><b>Here is the response from Snyk Vulns:</b> {{ snyk }} </p>
 </div>
 </template>
 
