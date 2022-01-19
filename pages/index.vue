@@ -10,6 +10,22 @@ export default defineComponent({
       devTo,
       snyk
     }
+  },
+  methods: {
+    goOverStuff(articles) {
+        const changed = articles.map((article) => {
+        return `Title: ${article.title}, Description: ${article.description}, Url: ${article.url }`
+    })
+    return changed;
+    },
+    goOverStuffOther(articles) {
+        let changed = []
+        for (const article of articles.data.vulns) {
+            changed.push(`Title: ${article.title}, CVSSv3: ${article.CVSSv3}`)
+        }
+    return changed;
+    }
+
   }
 })
 </script>
@@ -17,10 +33,10 @@ export default defineComponent({
 <template>
 <div>
 <Card/>
-<p><b>Here is the response from devTo:</b> {{ devTo }}</p>
+<p><b>Here is the response from devTo:</b> {{ goOverStuff(devTo) }}</p>
 <br>
 <p> ************************************************</p>
-<p><b>Here is the response from Snyk Vulns:</b> {{ snyk }} </p>
+<p><b>Here is the response from Snyk Vulns:</b> {{ goOverStuffOther(snyk) }} </p>
 </div>
 </template>
 
