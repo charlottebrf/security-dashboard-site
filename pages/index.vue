@@ -1,5 +1,5 @@
 <script>
-import Card from '../components/Card.vue'
+// import Card from '../components/Card.vue'
 export default defineComponent({
   async setup() {
     const [{ data: devTo}, { data: snyk }] = await Promise.all([
@@ -21,7 +21,7 @@ export default defineComponent({
     goOverStuffOther(articles) {
         let changed = []
         for (const article of articles.data.vulns) {
-            changed.push(`Title: ${article.title}, CVSSv3: ${article.CVSSv3}`)
+            changed.push(`Title: ${article.title}, id: ${article.id}`)
         }
     return changed;
     }
@@ -32,7 +32,6 @@ export default defineComponent({
 
 <template>
 <div>
-<Card/>
 <p><b>Here is the response from devTo:</b> {{ goOverStuff(devTo) }}</p>
 <br>
 <p> ************************************************</p>
