@@ -1,20 +1,33 @@
+
 <script>
 export default {
-  data() {
-    return {
-      greeting: 'Hello World!'
-    }
-  }
+props: [
+    'title',
+    'description',
+    'url'
+]
 }
 </script>
 
 <template>
-  <p class="greeting">{{ greeting }}</p>
+<div>
+  <h1 class="title">{{ title }}</h1>
+    <p class="description">{{ description }}</p>
+    <p class="url">{{ url }}</p>
+</div>
 </template>
 
 <style>
-.greeting {
+.title {
   color: red;
+  font-weight: bold;
+}
+.description {
+  color: blue;
+  font-weight: bold;
+}
+.url {
+  color: orange;
   font-weight: bold;
 }
 </style>

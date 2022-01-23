@@ -1,5 +1,5 @@
 <script>
-// import Card from '../components/Card.vue'
+import Card from '../components/Card.vue'
 export default defineComponent({
   async setup() {
     const [{ data: devTo}, { data: snyk }] = await Promise.all([
@@ -20,14 +20,14 @@ export default defineComponent({
   methods: {
     goOverStuff(articles) {
         const changed = articles.map((article) => {
-        return `Title: ${article.title}, Description: ${article.description}, Url: ${article.url }`
+        return { title: article.title, description: article.description, url: article.url }
     })
     return changed;
     },
     goOverStuffOther(articles) {
         let changed = []
         for (const article of articles.data.vulns) {
-            changed.push(`Title: ${article.title}, id: ${article.id}`)
+            changed.push({ title: article.title, description: article.id, url: `https://security.snyk.io/vuln/${article.url}`})
         }
     return changed;
     }
@@ -41,10 +41,25 @@ created() {
 
 <template>
 <div>
-<p><b>Here is the response from devTo:</b> {{ devToArticles }}</p>
-<br>
-<p> ************************************************</p>
-<p><b>Here is the response from Snyk Vulns:</b> {{ snykArticles }} </p>
+<h1>DevTo Articles</h1>
+<Card
+    v-for="article in devToArticles"
+    :key="article.title" 
+    :title="article.title"
+    :description="article.description"
+    :url="article.url"
+>
+</Card>
+
+<h1>Snyk Articles</h1>
+<Card
+    v-for="article in snykArticles"
+    :key="article.description" 
+    :title="article.title"
+    :description="article.description"
+    :url="article.url"
+>
+</Card>
 </div>
 </template>
 
