@@ -11,6 +11,12 @@ export default defineComponent({
       snyk
     }
   },
+  data() {
+      return {
+        devToArticles: [],
+        snykArticles: [],
+      }
+  },
   methods: {
     goOverStuff(articles) {
         const changed = articles.map((article) => {
@@ -25,17 +31,20 @@ export default defineComponent({
         }
     return changed;
     }
-
-  }
+},
+created() {
+    this.devToArticles = this.goOverStuff(this.devTo),
+    this.snykArticles = this.goOverStuffOther(this.snyk)
+},
 })
 </script>
 
 <template>
 <div>
-<p><b>Here is the response from devTo:</b> {{ goOverStuff(devTo) }}</p>
+<p><b>Here is the response from devTo:</b> {{ devToArticles }}</p>
 <br>
 <p> ************************************************</p>
-<p><b>Here is the response from Snyk Vulns:</b> {{ goOverStuffOther(snyk) }} </p>
+<p><b>Here is the response from Snyk Vulns:</b> {{ snykArticles }} </p>
 </div>
 </template>
 
