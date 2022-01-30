@@ -27,7 +27,7 @@ export default defineComponent({
     goOverStuffOther(articles) {
         let changed = []
         for (const article of articles.data.vulns) {
-            changed.push({ title: article.title, description: article.id, url: `https://security.snyk.io/vuln/${article.url}`})
+            changed.push({ title: article.title, description: article.id, url: `https://security.snyk.io/vuln/${article.id}`})
         }
     return changed;
     }
