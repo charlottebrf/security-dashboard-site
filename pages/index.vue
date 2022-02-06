@@ -62,10 +62,11 @@ created() {
 
 <style>
 .wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    grid-auto-rows: auto;
+    display: flex; /* or inline-flex */
+    row-gap: 10px;
+    column-gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 </style>
 

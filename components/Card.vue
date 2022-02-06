@@ -31,8 +31,7 @@ props: [
   font-weight: bold;
 }
 .card {
-  grid-column: auto;
-  grid-row: 10;
-  outline: solid;
+    outline: solid;
+    flex-grow: 2;
 }
 </style>
