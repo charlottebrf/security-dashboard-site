@@ -10,7 +10,7 @@ props: [
 </script>
 
 <template>
-<div>
+<div class="card">
   <h1 class="title">{{ title }}</h1>
     <p class="description">{{ description }}</p>
     <p class="url">{{ url }}</p>
@@ -29,5 +29,10 @@ props: [
 .url {
   color: orange;
   font-weight: bold;
+}
+.card {
+  grid-column: auto;
+  grid-row: 10;
+  outline: solid;
 }
 </style>

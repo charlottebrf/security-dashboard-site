@@ -40,8 +40,7 @@ created() {
 </script>
 
 <template>
-<div>
-<h1>DevTo Articles</h1>
+<div class="wrapper">
 <Card
     v-for="article in devToArticles"
     :key="article.title" 
@@ -50,8 +49,6 @@ created() {
     :url="article.url"
 >
 </Card>
-
-<h1>Snyk Articles</h1>
 <Card
     v-for="article in snykArticles"
     :key="article.description" 
@@ -62,4 +59,13 @@ created() {
 </Card>
 </div>
 </template>
+
+<style>
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    grid-auto-rows: auto;
+}
+</style>
 
