@@ -5,7 +5,11 @@ export default defineNuxtConfig({
     "app": {
         "basePath": "/",
         "assetsPath": "/_nuxt/",
-        "cdnURL": null
+        "cdnURL": null,
+        "dev": process.env.NODE_ENV !== 'production'
+      },
+      env: {
+        dev: true
       },
       vue: {
         config: {
