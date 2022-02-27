@@ -16,5 +16,14 @@ export default defineNuxtConfig({
           productionTip: false,
           devtools: true
         }
+      },
+      router: {
+        base: '/',
+        extendRoutes(routes, resolve) {
+          routes.push({
+            path: '/devTo',
+            component: resolve(__dirname, 'pages/devTo.vue')
+          })
+        }
       }
 })
