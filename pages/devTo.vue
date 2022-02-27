@@ -4,7 +4,6 @@ export default defineComponent({
     const { data: devToArticles } = await useFetch(`https://dev.to/api/articles?per_page=5&tag=security`);
     return { devToArticles };
   },
-
   methods: {
     goOverStuff(articles) {
         const changed = articles.map((article) => {

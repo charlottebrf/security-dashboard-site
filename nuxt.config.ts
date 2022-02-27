@@ -18,12 +18,22 @@ export default defineNuxtConfig({
         }
       },
       router: {
-        base: '/',
-        extendRoutes(routes, resolve) {
-          routes.push({
+        routes: [
+          {
+            name: 'index',
+            path: '/',
+            component: 'pages/index.vue'
+          },
+          {
+            name: 'devTo',
             path: '/devTo',
-            component: resolve(__dirname, 'pages/devTo.vue')
-          })
-        }
-      }
+            component: 'pages/devTo.vue'
+          },
+          {
+            name: 'snykVulns',
+            path: '/snykVulns',
+            component: 'pages/snykVulns.vue'
+          },
+        ]
+  }
 })
